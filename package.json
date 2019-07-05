@@ -21,7 +21,8 @@
     "unorm": "^1.4.1",
     "wd": "^0.3.11",
     "mkdirp": "^0.5.1",
-    "path-extra": "^3.0.0"
+    "path-extra": "^3.0.0",
+    "snyk": "^1.192.0"
   },
   "subdomain": "cordova.medic",
   "engines": {
@@ -35,9 +36,12 @@
   ],
   "scripts": {
     "test": "npm run lint",
-    "lint": "node_modules/.bin/jshint medic lib"
+    "lint": "node_modules/.bin/jshint medic lib",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "devDependencies": {
     "jshint": "^2.8.0"
-  }
+  },
+  "snyk": true
 }
